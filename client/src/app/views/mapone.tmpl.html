@@ -1,0 +1,11 @@
+<div  ng-controller="MaponeController as maponeVm" ng-show="maponeVm.showMap">
+    <h3 align="center">Vehicle Location in Last 30 minutes</h3>
+    <ui-gmap-google-map center='maponeVm.map.center' zoom='maponeVm.map.zoom' >
+        <ui-gmap-marker ng-repeat="m in maponeVm.map.markers" coords="m.coords" icon="m.icon" idkey="m.id">
+        </ui-gmap-marker>
+    </ui-gmap-google-map>
+</div>
+
+<div ng-show="maponeVm.showError">
+    <h3 align="center">No Data available for this vehicle for last 30 minutes...</h3>
+</div>

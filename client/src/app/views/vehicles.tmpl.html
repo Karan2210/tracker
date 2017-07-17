@@ -1,0 +1,43 @@
+<div class="container">
+    <h2 align="center">Vehicles</h2>
+    <div>
+        <input type="search" ng-model="vehiclesVm.searchText.vin" placeholder="Search vechicle using vin..." class="form-control">
+    </div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th ng-click="vehiclesVm.changeSort('highAlertCount')">High Alerts (last 2 hr)</th>
+            <th>Map</th>
+            <th>Analysis</th>
+            <th>Alerts</th>
+            <th>Vin</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Redline rpm</th>
+            <th>Max fuel volume</th>
+            <th>Last service date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr dir-paginate="vehicle in vehiclesVm.vehicles | filter:vehiclesVm.searchText.vin | orderBy:vehiclesVm.sorter.by:vehiclesVm.sorter.reverse | itemsPerPage:5">
+            <td>{{vehicle.highAlertCount}}</td>
+            <td><a ng-href="#!/map/{{vehicle.vin}}"><img src='./images/map.png'></a></td>
+            <td><a ng-href="#!/graphs/{{vehicle.vin}}"><img src='./images/graph.png'></a></td>
+            <td><a ng-href="#!/alerts/{{vehicle.vin}}"><img src='./images/alerts.png'></a></td>
+            <td>{{vehicle.vin}}</td>
+            <td>{{vehicle.make}}</td>
+            <td>{{vehicle.model}}</td>
+            <td>{{vehicle.year}}</td>
+            <td>{{vehicle.redlineRpm}}</td>
+            <td>{{vehicle.maxFuelVolume}}</td>
+            <td>{{vehicle.lastServiceDate | date:'medium'}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <dir-pagination-controls
+            max-size="5"
+            direction-links="true"
+            boundary-links="true" >
+    </dir-pagination-controls>
+</div>

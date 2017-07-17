@@ -1,0 +1,7 @@
+.DS_Store
+.idea/*
+api/backend-api/target/*
+*.iml
+client/bower_components
+client/node_modules
+client/build

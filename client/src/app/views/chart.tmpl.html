@@ -1,0 +1,33 @@
+<div class="container" ng-controller="ChartController as chartVm">
+    <form align="center">
+        <label>
+            <input type="radio" ng-change="chartVm.changeFilter('last30min')" ng-model="chartVm.filter.name"
+                   value="last30min">
+            Last 30 minutes
+        </label>&nbsp;&nbsp;
+        <label>
+            <input type="radio" ng-change="chartVm.changeFilter('last1hr')" ng-model="chartVm.filter.name"
+                   value="last1hr">
+            Last one Hour
+        </label>&nbsp;&nbsp;
+        <label>
+            <input type="radio" ng-change="chartVm.changeFilter('last2hr')" ng-model="chartVm.filter.name"
+                   value="last2hr">
+            Last Two hours
+        </label>&nbsp;&nbsp;
+        <label>
+            <input type="radio" ng-change="chartVm.changeFilter('last1d')" ng-model="chartVm.filter.name"
+                   value="last1d">
+            Last One day
+        </label> <br><br>
+    </form>
+    <div ng-show="chartVm.showChart">
+        <chart title="Vehicle Readings" xName="Month" yName="Hit">
+
+        </chart>
+    </div>
+    <div ng-show="chartVm.showError">
+        <h3 align="center">No Data available for this date range...</h3>
+    </div>
+
+</div>

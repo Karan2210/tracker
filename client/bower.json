@@ -1,0 +1,33 @@
+{
+  "name": "client-ui",
+  "description": "front end module for vehicle tracker",
+  "authors": [
+    "karan.prabhu2210@gmail.com"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Karan2210/tracker",
+  "private": "true",
+  "dependencies": {
+    "angular": "^1.3.14",
+    "bootstrap": "^3.3.6",
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.1",
+    "highcharts": "^5.0.12",
+    "angular-route": "^1.6.4",
+    "angular-google-maps": "^2.4.1"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/fonts/glyphicons-halflings-regular.eot",
+        "dist/fonts/glyphicons-halflings-regular.svg",
+        "dist/fonts/glyphicons-halflings-regular.ttf",
+        "dist/fonts/glyphicons-halflings-regular.woff",
+        "dist/fonts/glyphicons-halflings-regular.woff2"
+      ]
+    },
+    "jquery": {
+      "main": []
+    }
+  }
+}
