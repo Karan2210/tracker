@@ -1,0 +1,40 @@
+/* Put your css in here */
+
+section {
+    min-height: 400px;
+}
+
+img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.businesscard {
+    width: 400px;
+    border: 4px solid #374B67;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 2px 2px 4px #ABABAB;
+    border-radius: 2px;
+}
+
+.businesscard h3, .businesscard h4 {
+    margin: 0;
+}
+
+.businesscard h3 {
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+#gmaps {
+    width: 450px;
+    height: 450px;
+}
+
+/* Put your css in here */
+.angular-google-map-container { height: 400px; }

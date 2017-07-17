@@ -1,0 +1,33 @@
+<div class="container">
+    <h2 align="center">Vehicle Alerts</h2>
+    <div>
+        <input type="search" ng-model="alertsVm.searchText" placeholder="Search alerts..." class="form-control">
+    </div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th ng-click="alertsVm.changeSort('vin')">Vin</th>
+            <th ng-click="alertsVm.changeSort('alertId')">Alert id</th>
+            <th ng-click="alertsVm.changeSort('alertPriority')">Alert priority</th>
+            <th ng-click="alertsVm.changeSort('alertCreationTime')">Alert created date</th>
+            <th ng-click="alertsVm.changeSort('alertType')">Alert type</th>
+            <th ng-click="alertsVm.changeSort('alertCleared')">Is Alert cleared</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr dir-paginate="alert in alertsVm.alerts | filter:alertsVm.searchText | orderBy:alertsVm.sorter.by:alertsVm.sorter.reverse | itemsPerPage:10">
+            <td>{{alert.vin}}</td>
+            <td>{{alert.alertId}}</td>
+            <td>{{alert.alertPriority}}</td>
+            <td>{{alert.alertCreationTime | date:'medium'}}</td>
+            <td>{{alert.alertType}}</td>
+            <td>{{alert.alertCleared}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <dir-pagination-controls
+            max-size="5"
+            direction-links="true"
+            boundary-links="true" >
+    </dir-pagination-controls>
+</div>
